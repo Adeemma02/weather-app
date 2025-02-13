@@ -42,7 +42,7 @@ const WeatherApp = () => {
 
   const fetchWeatherData = async () => {
     setLoading(true);
-    setError(null); // Clear any previous errors
+    setError(null); 
 
     try {
       const response = await fetch(API_URL);
@@ -75,12 +75,12 @@ const WeatherApp = () => {
     return <div style={myStyle}>Loading...</div>;
   }
 
-  if (error) {
-    return <div style={myStyle}>Error: {error}</div>;
-  }
+  // if (error) {
+  //   return <div style={myStyle}>{error}</div>;
+  // }
 
   if (!weatherData) {
-    return <div style={myStyle}>No weather data available yet.</div>; // Handle initial state
+    return <div style={myStyle}>No weather data available yet.</div>; 
   }
 
   // Example of how to access and display data:
@@ -103,15 +103,21 @@ const WeatherApp = () => {
                 <button type="submit" className='search-btn'>Search</button>
               </form>
 
+              {error && (
+        <div style={{ fontSize: "20px", padding: "10px",  color: "red", fontWeight: "bold" }}>
+          <p>Please check the spelling or search for a different city. </p>
+        </div>
+      )}
+
        <h2 className="display-date">{formattedDate}</h2>
        <h2 className='display-name'>{location.name}, {location.country}</h2>
       <img className='display-img' src={current.condition.icon} alt={current.condition.text} />
       <p className='display-text'>{current.condition.text}</p>
       <div className="contents">
-        <p>Temperature <br /> {current.temp_c}°C</p>
-        <p>Temperature <br /> {current.temp_f}°f</p>
-        <p>wind <br /> {current.wind_kph} Kph</p>
-        <p>Humidity <br /> {current.humidity}%</p>
+      <p><i class="fa-solid fa-temperature-quarter ic"></i>Temperature <br /> {current.temp_c}°C</p>
+        <p><i class="fa-solid fa-temperature-quarter ic"></i>Temperature <br /> {current.temp_f}°f</p>
+        <p><i class="fa-solid fa-wind ic"></i>wind <br /> {current.wind_kph} Kph</p>
+        <p><i class="fa-solid fa-water ic"></i>Humidity <br /> {current.humidity}%</p>
       </div>
 
       <h3 className='next'>5-Days Forecast</h3>

@@ -59,7 +59,8 @@ body{
 outline: none;
 }
 .display-img{
-  height: 200px;
+  height: 150px;
+  width: 150px;
   color: #4c8bf5;
   margin: 20px auto 0;
   display: block;
@@ -99,6 +100,9 @@ outline: none;
   padding: 20px 0;
   border-radius: 10px;
   color: #004f40;
+}
+.ic{
+  margin-right: 7px;
 }
 .futures{
   display: flex;
