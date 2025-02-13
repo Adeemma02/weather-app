@@ -37,6 +37,7 @@ body{
   background-color: #fff;
   border-radius: 20px;
   font-size: 18px;
+  color: #020202;
 }
 .search-input:focus{
   outline: none;

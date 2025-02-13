@@ -108,7 +108,7 @@ const WeatherApp = () => {
         <p>Humidity <br /> {current.humidity}%</p>
       </div>
 
-      <h3 className='next'>5-Day Forecast</h3>
+      <h3 className='next'>5-Days Forecast</h3>
       <div className='futures'>
         {forecastDays.map((day) => (
           <div key={day.date} className='future'>
