@@ -26,6 +26,12 @@ const WeatherApp = () => {
   const year = currentDate.getFullYear();
   const formattedDate = `${month} ${day}, ${year}`;
 
+  const myStyle = {
+    color: 'black',
+    fontSize: '25px',
+    paddingTop: '50px'
+  };
+
   const API_KEY = '6e7a8e24f44247ec893224228251202'; 
   const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=5&aqi=no&alerts=no`; 
 
@@ -66,15 +72,15 @@ const WeatherApp = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div style={myStyle}>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div style={myStyle}>Error: {error}</div>;
   }
 
   if (!weatherData) {
-    return <div>No weather data available yet.</div>; // Handle initial state
+    return <div style={myStyle}>No weather data available yet.</div>; // Handle initial state
   }
 
   // Example of how to access and display data:
